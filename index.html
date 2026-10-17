@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Breaktime Arcade</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div class="eyebrow">A SMALL ARCADE FOR SHORT BREAKS</div>
+      <h1>Breaktime<br><span>Arcade</span></h1>
+      <p>Choose a familiar game, settle in for a few minutes, and return to your work when you are ready.</p>
+    </header>
+
+    <section class="game-grid" aria-label="Choose a game">
+      <a class="game-card card-purple" href="tetris.html">
+        <img class="cover-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/Typical%20Tetris%20Game.svg" alt="Tetris game board screenshot"><div class="card-top"><span class="game-icon">T</span><span class="play-arrow">Open game</span></div>
+        <div><span class="tag">PUZZLE GAME</span><h2>Tetris</h2><p>Arrange falling pieces and clear complete rows.</p></div>
+      </a>
+      <a class="game-card card-green" href="snake.html">
+        <img class="cover-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/ONScripter%20Snake.png" alt="Snake game screenshot"><div class="card-top"><span class="game-icon">S</span><span class="play-arrow">Open game</span></div>
+        <div><span class="tag">ARCADE GAME</span><h2>Snake</h2><p>Guide the snake toward each new piece of food.</p></div>
+      </a>
+      <a class="game-card card-yellow" href="pacman.html">
+        <img class="cover-art" src="https://commons.wikimedia.org/wiki/Special:FilePath/Original%20PacMan.svg" alt="Pac-Man game artwork"><div class="card-top"><span class="game-icon">P</span><span class="play-arrow">Open game</span></div>
+        <div><span class="tag">MAZE GAME</span><h2>Pac-Man</h2><p>Clear the maze while avoiding the ghosts.</p></div>
+      </a>
+    </section>
+
+    <section class="shop-panel" aria-label="Arcade shop">
+      <div class="shop-head">
+        <div><div class="eyebrow">ARCADE COLLECTION</div><h2>Customize the boards</h2><p>Earn points during play and use them to add new visual themes.</p></div>
+        <div class="wallet"><span>POINTS</span><strong id="wallet-points">0</strong></div>
+      </div>
+      <div class="crate-grid">
+        <button class="crate crate-scheme" id="scheme-crate"><span class="crate-mark">COLOR</span><strong>Color theme</strong><small>25 points. Applies to a random game.</small></button>
+        <button class="crate crate-sticker" id="sticker-crate"><span class="crate-mark">ART</span><strong>Board artwork</strong><small>15 points. Adds art to every game board.</small></button>
+      </div>
+      <p class="shop-message" id="shop-message" aria-live="polite">Your collection is ready for new themes and board artwork.</p>
+      <div class="collection" id="collection"></div>
+    </section>
+
+    <footer><span>Choose a game whenever you need a short reset.</span><span>Use the arrow keys to play.</span></footer>
+  </main>
+  <script src="games.js"></script>
+</body>
+</html>
