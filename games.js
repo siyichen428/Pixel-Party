@@ -1,5 +1,9 @@
 const $ = (s) => document.querySelector(s);
 
+const applyBackground = () => { const light = localStorage.getItem('arcadeBackground') === 'light'; document.body.classList.toggle('light-mode', light); document.querySelectorAll('.theme-toggle').forEach(button => { button.textContent = light ? 'Use a dark background' : 'Use a light background'; button.setAttribute('aria-pressed', String(light)); }); };
+applyBackground();
+document.querySelectorAll('.theme-toggle').forEach(button => { button.addEventListener('click', () => { localStorage.setItem('arcadeBackground', document.body.classList.contains('light-mode') ? 'dark' : 'light'); applyBackground(); }); });
+
 const schemeNames = ['Inverted', 'Blue', 'Neon', 'Sunset', 'Mono', 'Candy', 'Emerald', 'Fire', 'Ice', 'Purple', 'Gold', 'Ocean', 'Rose', 'Lime', 'Cyber', 'Violet', 'Sepia', 'Aurora'];
 const stickerNames = ['Star', 'Bolt', 'Dot', 'Diamond'];
 const getPoints = () => { if (localStorage.getItem('arcadePoints') === null) localStorage.arcadePoints = '50'; return Number(localStorage.arcadePoints || 0); };
